@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" >
+    <title>Product Update Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+    <h1>Update Product</h1><br><br>
+    <form th:action="@{/modifyproduct}" method="post" th:object="${product}">
+        <div class="form-group">
+            <label>Enter Product Id</label>
+            <input type="text" name="productId" class="form-control" th:field="*{productId}" readonly>
+        </div>
+        <div class="form-group">
+            <label>Enter New Product Name</label>
+            <input type="text" name="productName" class="form-control" th:field="*{productName}">
+        </div>
+        <div class="form-group">
+            <label>Enter New Product price</label>
+            <input type="text" name="productPrice" class="form-control" th:field="*{productPrice}">
+        </div>
+        <br><br>
+        <div>
+            <input type="submit" value="Update Product" class="btn btn-success">
+        </div>
+    </form>
+</div>
+</body>
+</html>
